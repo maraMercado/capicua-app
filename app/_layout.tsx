@@ -2,6 +2,7 @@ import { Stack } from "expo-router";
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 import {useEffect} from 'react';
+import { ThemeProvider } from "../themes/ThemeProvider";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -21,7 +22,11 @@ export default function RootLayout() {
     return null;
   }
 
-  return <Stack>
-    <Stack.Screen name="index" options={{headerShown: false}} />
-  </Stack>;
+  return (
+    <ThemeProvider>
+      <Stack>
+        <Stack.Screen name="index" options={{headerShown: false}} />
+      </Stack>
+    </ThemeProvider>
+  )
 }

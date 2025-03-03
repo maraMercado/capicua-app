@@ -1,0 +1,1 @@
+export let setScheme: (p: string) => {}
